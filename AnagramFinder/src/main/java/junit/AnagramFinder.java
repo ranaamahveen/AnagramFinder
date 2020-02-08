@@ -53,7 +53,7 @@ public class AnagramFinder {
 			s = new Scanner(new File(dict));
 			lEndTime = System.nanoTime();
 			output =  TimeUnit.NANOSECONDS.toMicros((lEndTime - lStartTime));
-			System.out.println("Dictionary loaded in "+output+"μs");
+			System.out.println("Dictionary loaded in "+output+"micro sec");
 			
 			Map<String, List<String>> filteredWords = new HashMap<String, List<String>>();
 			//mapping all the anagrams for each word and storing using hashmap
@@ -97,7 +97,7 @@ public class AnagramFinder {
 			    	lEndTime = System.nanoTime();
 			    	output =  TimeUnit.NANOSECONDS.toMicros((lEndTime - lStartTime));
 			    	setAnagramSearchOutput("No anagrams found ");
-			        System.out.print("No anagrams found for " +st+" in "+output+"μs \n");
+			        System.out.print("No anagrams found for " +st+" in "+output+"micro sec \n");
 			    } else if (filteredWords.get(str).size() != 0) {
 			        for (String p : filteredWords.get(str)) {
 			        	if(count!=0) {
@@ -109,7 +109,7 @@ public class AnagramFinder {
 			        lEndTime = System.nanoTime();
 			        output =  TimeUnit.NANOSECONDS.toMicros((lEndTime - lStartTime));
 			        setAnagramSearchOutput( "Anagrams found in dictionary");
-			        System.out.print(count+" Anagrams found for "+st+" in "+output+"μs \n");
+			        System.out.print(count+" Anagrams found for "+st+" in "+output+"micro sec \n");
 			        System.out.println(anagramString);
 			    }
 				System.out.println("\nEnter the word");
