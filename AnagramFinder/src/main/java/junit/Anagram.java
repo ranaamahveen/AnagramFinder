@@ -86,7 +86,7 @@ public class Anagram {
 	 */
 	public void anagramResult(String st, int count, String anagramString) {
 		if(count==0) {
-			setAnagramSearchOutput("No anagrams found ");
+			setAnagramSearchOutput("No anagrams found");
 			System.out.println("No anagrams found for "+st+" in " +output+"ms");
 		}
 		else if(count>0) {

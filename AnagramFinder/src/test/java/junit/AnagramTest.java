@@ -28,8 +28,6 @@ public class AnagramTest {
 		arguements[0] = filename;
 		Scanner sc = new Scanner(System.in);
 		String wrd = sc.next();
-		System.out.println("here");
-		System.out.println("word: "+wrd);
 		angrm.matchWords(arguements[0]);
 	}
 
@@ -51,23 +49,23 @@ public class AnagramTest {
 		Scanner in = new Scanner(System.in);
 		angrm.anagramFind(filename, in);
 		String result = angrm.getAnagramSearchOutput();
-		Assert.assertEquals(result,"Word not found in dictionary");
+		Assert.assertEquals(result,"No anagrams found");
 	}
 	@Test
 	public void testAnagramResult1() {
 		int count = 0;
-		String userInp = null;
-		String anagramList = "Hello world";
+		String userInp = "qwer";
+		String anagramList = "";
 		angrm.anagramResult(userInp, count, anagramList);
 		String result = angrm.getAnagramSearchOutput();
-		Assert.assertEquals(result,"Word not found in dictionary");
+		Assert.assertEquals(result,"No anagrams found");
 	}
 	
 	@Test
 	public void testAnagramResult2() {
 		int count = 2;
-		String userInp = null;
-		String anagramList = "Hello, world";
+		String userInp = "word";
+		String anagramList = "drow, world";
 		angrm.anagramResult(userInp, count, anagramList);
 		String result = angrm.getAnagramSearchOutput();
 		Assert.assertEquals(result,"Anagrams found in dictionary");

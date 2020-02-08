@@ -16,6 +16,15 @@ public class AnagramFinder {
 	private long output;
 	private Map<String, List<String>> filteredWords = null;
 	private String dict = null;
+	private String anagramSearchOutput = null;
+
+	public String getAnagramSearchOutput() {
+		return anagramSearchOutput;
+	}
+	public void setAnagramSearchOutput(String anagramSearchOutput) {
+		this.anagramSearchOutput = anagramSearchOutput;
+	}
+	
 	public Map<String, List<String>> getFilteredWords() throws FileNotFoundException {
 		if (filteredWords == null) {
 			loadDictionary();
@@ -87,6 +96,7 @@ public class AnagramFinder {
 			    if (!filteredWords.containsKey(str)) {
 			    	lEndTime = System.nanoTime();
 			    	output =  TimeUnit.NANOSECONDS.toMicros((lEndTime - lStartTime));
+			    	setAnagramSearchOutput("No anagrams found ");
 			        System.out.print("No anagrams found for " +st+" in "+output+"μs \n");
 			    } else if (filteredWords.get(str).size() != 0) {
 			        for (String p : filteredWords.get(str)) {
@@ -98,6 +108,7 @@ public class AnagramFinder {
 			        }
 			        lEndTime = System.nanoTime();
 			        output =  TimeUnit.NANOSECONDS.toMicros((lEndTime - lStartTime));
+			        setAnagramSearchOutput( "Anagrams found in dictionary");
 			        System.out.print(count+" Anagrams found for "+st+" in "+output+"μs \n");
 			        System.out.println(anagramString);
 			    }
