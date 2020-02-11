@@ -93,8 +93,6 @@ public class Anagram {
 			System.out.println(count+" Anagrams found for "+st+" in "+output+"ms");
 			setAnagramSearchOutput( "Anagrams found in dictionary");
 			System.out.println(anagramString);
-		} else {
-			System.out.println();
 		}
 	}
     public static void main(String[] args){
